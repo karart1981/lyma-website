@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lyma</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- NAVBAR -->
+  <header class="bg-white shadow">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="#" class="text-xl font-semibold">
+        <svg width="98" height="13" viewBox="0 0 98 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H4.51437V10.7492C4.51437 11.7234 5.57097 11.8224 6.06719 11.8224H11.2459V12.6728H1.53684V0.84206H0V0Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M37.9238 0H36.9096L32.365 7.44824L27.8206 0H23.4648V0.851456H24.9586L29.9906 9.10155V12.6728H35.0697V11.8213H34.0633C33.5444 11.8213 32.9154 11.5485 32.9154 10.8872L32.9233 8.24185L37.9238 0Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M49.6901 0.00828764V0.858085H51.2572V12.6728H52.1733V3.16822L58.0797 12.6563L64.2274 2.82168V12.6646H68.9688V11.8148C68.6147 11.8148 67.2169 11.8148 67.2169 10.833V0L64.9344 0.00828764L59.3011 9.04261L53.62 0H49.6901V0.00828764Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M83.1701 7.25694L86.595 1.84106L90.0037 7.25694H83.1701ZM95.5579 10.5511L88.9184 0H84.587V0.850353H86.1009L78.676 12.6728H79.7451L82.6355 8.1073H90.5377L93.4124 12.6728H97.9547V11.8224C96.9669 11.8224 96.0521 11.3354 95.5579 10.5511Z" fill="black"/>
+        </svg>
+      </a>
+      <button id="menu-toggle" class="sm:hidden p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <div id="menu" class="hidden sm:flex space-x-8">
+        <a href="javascript:void(0)" data-category="beauty" class="text-gray-700 hover:text-gray-900">Beauty</a>
+        <a href="javascript:void(0)" data-category="fragrances" class="text-gray-700 hover:text-gray-900">Fragrances</a>
+        <a href="javascript:void(0)" data-category="furniture" class="text-gray-700 hover:text-gray-900">Furniture</a>
+        <a href="javascript:void(0)" data-category="groceries" class="text-gray-700 hover:text-gray-900">Groceries</a>
+        <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="sm:hidden px-4 pb-4 hidden space-y-2">
+      <a href="javascript:void(0)" data-category="beauty" class="block py-2">Beauty</a>
+      <a href="javascript:void(0)" data-category="fragrances" class="block py-2">Fragrances</a>
+      <a href="javascript:void(0)" data-category="furniture" class="block py-2">Furniture</a>
+      <a href="javascript:void(0)" data-category="groceries" class="block py-2">Groceries</a>
+      <a href="#" class="block py-2">About</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <header class="relative bg-cover bg-center h-[60vh]" style="background-image:url('./img/about-bg.jpg')">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <h1 class="text-white text-3xl sm:text-5xl font-normal mb-4">
+        THE FUTURE OF WELLNESS.
+      </h1>
+      <p class="text-white text-sm sm:text-base max-w-md">
+        The perfect balance of science, nature and technology. Prepare to look and feel your absolute best.
+      </p>
+      <div class="flex gap-4 mt-6">
+        <button class="border border-white text-white px-6 py-2 text-xs tracking-widest">DEAL OF THE DAY</button>
+        <button class="border border-white text-white px-6 py-2 text-xs tracking-widest">JOURNAL</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATEGORY FILTER -->
+  <main class="container mx-auto px-4 py-8 space-y-4">
+    <select id="category-filter" class="border p-2 rounded w-full sm:w-64">
+      <option value="">All Categories</option>
+      <option value="beauty">Beauty</option>
+      <option value="fragrances">Fragrances</option>
+      <option value="furniture">Furniture</option>
+      <option value="groceries">Groceries</option>
+    </select>
+
+    <!-- PRODUCT SECTIONS -->
+    <div id="sections-container" class="space-y-10"></div>
+  </main>
+
+  <!-- CART -->
+  <button id="cart-toggle" class="fixed bottom-6 right-6 bg-[#a5c927] text-white p-4 rounded-full shadow-lg z-20">
+    🛒 <span id="cart-count">0</span>
+  </button>
+  <div id="cart-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-10"></div>
+  <aside id="cart-panel" class="hidden fixed inset-y-0 right-0 w-full sm:max-w-xs lg:w-96 bg-white shadow-xl z-20 flex flex-col">
+    <div class="flex justify-between items-center p-4 border-b">
+      <h2 class="text-lg">Your Cart</h2>
+      <button id="cart-close" class="text-gray-600 hover:text-gray-800">✕</button>
+    </div>
+    <div id="cart-container" class="p-4 flex-1 overflow-auto space-y-4"></div>
+    <div class="p-4 border-t">
+      <p class="font-semibold">Total: $<span id="cart-total">0</span></p>
+    </div>
+  </aside>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ID = id => document.getElementById(id);
+
+      document.getElementById('menu-toggle').addEventListener('click', () =>
+        document.getElementById('mobile-menu').classList.toggle('hidden')
+      );
+
+      const sel = ID('category-filter');
+      const sectionsContainer = ID('sections-container');
+
+      let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+
+      const saveCart = () => sessionStorage.setItem('cart', JSON.stringify(cart));
+
+      const updateCart = () => {
+        const cont = ID('cart-container');
+        cont.innerHTML = '';
+        let total = 0;
+        cart.forEach(i => {
+          total += i.price * i.quantity;
+          const div = document.createElement('div');
+          div.className = 'flex justify-between items-center';
+          div.innerHTML = `
+            <span class="text-sm">${i.title} × ${i.quantity}</span>
+            <div class="flex items-center space-x-1">
+              <button data-id="${i.id}" class="decrease bg-gray-200 rounded px-1">‑</button>
+              <button data-id="${i.id}" class="increase bg-gray-200 rounded px-1">+</button>
+              <button data-id="${i.id}" class="remove bg-red-200 rounded px-1">✕</button>
+            </div>`;
+          cont.appendChild(div);
+        });
+        ID('cart-count').textContent = cart.reduce((sum, i) => sum + i.quantity, 0);
+        ID('cart-total').textContent = total.toFixed(2);
+        saveCart();
+      };
+
+      const addToCart = prod => {
+        const p = cart.find(i => i.id === prod.id);
+        p ? p.quantity++ : cart.push({ ...prod, quantity: 1 });
+        updateCart();
+        toggleCart(true);
+      };
+
+      const toggleCart = v => {
+        ID('cart-panel').classList.toggle('hidden', !v);
+        ID('cart-overlay').classList.toggle('hidden', !v);
+      };
+
+      ID('cart-toggle').onclick = () => toggleCart(true);
+      ID('cart-close').onclick = () => toggleCart(false);
+      ID('cart-overlay').onclick = () => toggleCart(false);
+
+      ID('cart-container').onclick = e => {
+        const id = +e.target.dataset.id;
+        let item = cart.find(i => i.id === id);
+        if (!item) return;
+        if (e.target.matches('.increase')) item.quantity++;
+        else if (e.target.matches('.decrease')) {
+          if (--item.quantity === 0) cart = cart.filter(i => i.id !== id);
+        } else if (e.target.matches('.remove')) {
+          cart = cart.filter(i => i.id !== id);
+        }
+        updateCart();
+      };
+
+      function loadAndRender(category) {
+        const url = category ?
+          `https://dummyjson.com/products/category/${category}` :
+          'https://dummyjson.com/products';
+
+        fetch(url)
+          .then(res => res.json())
+          .then(data => {
+            const prods = category ? data.products : data.products;
+            const grouped = category ? { [category]: prods } :
+              prods.reduce((acc, p) => {
+                (acc[p.category] ||= []).push(p);
+                return acc;
+              }, {});
+
+            sectionsContainer.innerHTML = '';
+            for (const [cat, products] of Object.entries(grouped)) {
+              const section = document.createElement('div');
+              section.innerHTML = `
+                <h2 class="text-2xl font-semibold mb-4">${cat[0].toUpperCase() + cat.slice(1)}</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"></div>`;
+              const grid = section.querySelector('div');
+              products.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'bg-white shadow rounded flex flex-col overflow-hidden';
+                card.innerHTML = `
+                  <img src="${p.thumbnail}" alt="${p.title}" class="w-full h-40 object-cover">
+                  <div class="p-4 flex flex-col flex-1">
+                    <h3 class="font-semibold mb-2">${p.title}</h3>
+                    <p class="text-lg font-bold mb-4">$${p.price}</p>
+                    <button data-id="${p.id}" data-title="${p.title}" data-price="${p.price}" class="buy-btn mt-auto bg-blue-600 text-white px-3 py-1 rounded">Buy</button>
+                  </div>`;
+                grid.appendChild(card);
+              });
+              sectionsContainer.appendChild(section);
+            }
+
+            // Attach Buy button events
+            sectionsContainer.querySelectorAll('.buy-btn').forEach(btn => {
+              btn.addEventListener('click', e => {
+                const el = e.currentTarget;
+                const prod = {
+                  id: +el.dataset.id,
+                  title: el.dataset.title,
+                  price: +el.dataset.price,
+                };
+                addToCart(prod);
+              });
+            });
+          });
+      }
+
+      // Attach navbar category filters
+      document.querySelectorAll('[data-category]').forEach(link => {
+        link.addEventListener('click', e => {
+          const category = e.target.dataset.category;
+          sel.value = category;
+          sel.dispatchEvent(new Event('change'));
+          ID('mobile-menu').classList.add('hidden');
+        });
+      });
+
+      sel.onchange = e => loadAndRender(e.target.value);
+
+      updateCart();
+      sel.dispatchEvent(new Event('change'));
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
