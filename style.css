@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root{
-  --font-montserrat: font-family: "Montserrat", sans-serif; font-optical-sizing: auto; font-weight: normal; font-style: normal;
-  --font-roboto: font-family: "Roboto", sans-serif; font-optical-sizing: auto; font-weight: normal; font-style: normal; font-variation-settings: "wdth" 100;
-  
+  --green: #a5c927;
+  --font-inter: 'Inter', sans-serif;
+  --font-garamond: 'Garamond', serif;
 }
+
+
+
 

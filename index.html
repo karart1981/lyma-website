@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lyma</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -24,36 +25,35 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-      <div id="menu" class="hidden sm:flex space-x-8">
+      <div id="menu" class="hidden sm:flex space-x-8 font-[var(--font-inter)]">
+        <a href="#about" class="text-gray-700 hover:text-gray-900">About Us</a>
         <a href="javascript:void(0)" data-category="beauty" class="text-gray-700 hover:text-gray-900">Beauty</a>
         <a href="javascript:void(0)" data-category="fragrances" class="text-gray-700 hover:text-gray-900">Fragrances</a>
         <a href="javascript:void(0)" data-category="furniture" class="text-gray-700 hover:text-gray-900">Furniture</a>
         <a href="javascript:void(0)" data-category="groceries" class="text-gray-700 hover:text-gray-900">Groceries</a>
-        <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
       </div>
     </nav>
     <div id="mobile-menu" class="sm:hidden px-4 pb-4 hidden space-y-2">
+      <a href="#about" class="block py-2">About</a>
       <a href="javascript:void(0)" data-category="beauty" class="block py-2">Beauty</a>
       <a href="javascript:void(0)" data-category="fragrances" class="block py-2">Fragrances</a>
       <a href="javascript:void(0)" data-category="furniture" class="block py-2">Furniture</a>
       <a href="javascript:void(0)" data-category="groceries" class="block py-2">Groceries</a>
-      <a href="#" class="block py-2">About</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <header class="relative bg-cover bg-center h-[60vh]" style="background-image:url('./img/about-bg.jpg')">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <header class="bg-[url('./img/about-bg.jpg')] bg-cover bg-center max-w-[100%] h-[600px]">
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-      <h1 class="text-white text-3xl sm:text-5xl font-normal mb-4">
-        THE FUTURE OF WELLNESS.
+      <h1 class="text-black-600 text-3xl sm:text-5xl font-normal mb-4 text-gray-950 font-[var(--font-garamond,Garandond,serif)]">
+        Luxury without labels.
       </h1>
-      <p class="text-white text-sm sm:text-base max-w-md">
-        The perfect balance of science, nature and technology. Prepare to look and feel your absolute best.
+      <p class="text-black-400 text-shadow-lg/10 text-sm sm:text-base max-w-md">
+        The perfect balance of science, nature and technology. 
       </p>
       <div class="flex gap-4 mt-6">
-        <button class="border border-white text-white px-6 py-2 text-xs tracking-widest">DEAL OF THE DAY</button>
-        <button class="border border-white text-white px-6 py-2 text-xs tracking-widest">JOURNAL</button>
+        <button class="border-none text-black-800 px-6 py-4 text-xs tracking-widest bg-white text-[14px] font-medium cursor-pointer">DEAL OF THE DAY</button>
+        <button class="border-none text-black-800 py-4 text-xs tracking-widest bg-white px-6 text-[14px] font-medium cursor-pointer">JOURNAL</button>
       </div>
     </div>
   </header>
@@ -88,7 +88,7 @@
     </div>
   </aside>
 
-  <!-- JS -->
+  <!-- SCRIPT -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const ID = id => document.getElementById(id);
@@ -173,6 +173,7 @@
             sectionsContainer.innerHTML = '';
             for (const [cat, products] of Object.entries(grouped)) {
               const section = document.createElement('div');
+              section.id = `section-${cat}`; // Assign section ID
               section.innerHTML = `
                 <h2 class="text-2xl font-semibold mb-4">${cat[0].toUpperCase() + cat.slice(1)}</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"></div>`;
@@ -185,7 +186,7 @@
                   <div class="p-4 flex flex-col flex-1">
                     <h3 class="font-semibold mb-2">${p.title}</h3>
                     <p class="text-lg font-bold mb-4">$${p.price}</p>
-                    <button data-id="${p.id}" data-title="${p.title}" data-price="${p.price}" class="buy-btn mt-auto bg-blue-600 text-white px-3 py-1 rounded">Buy</button>
+                    <button data-id="${p.id}" data-title="${p.title}" data-price="${p.price}" class="buy-btn mt-auto bg-[#a5c927] text-white px-3 py-1 rounded">Buy</button>
                   </div>`;
                 grid.appendChild(card);
               });
@@ -213,6 +214,15 @@
           const category = e.target.dataset.category;
           sel.value = category;
           sel.dispatchEvent(new Event('change'));
+
+          // Wait for products to render, then scroll
+          setTimeout(() => {
+            const section = document.getElementById(`section-${category}`);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 500); // Delay to allow rendering
+
           ID('mobile-menu').classList.add('hidden');
         });
       });
@@ -223,8 +233,10 @@
       sel.dispatchEvent(new Event('change'));
     });
   </script>
+
 </body>
 </html>
+
 
 
 
