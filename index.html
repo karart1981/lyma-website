@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta configuration -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Page Title and Icon -->
   <title>Lyma</title>
   <link rel="shortcut icon" href="https://www.clipartmax.com/png/middle/76-767669_store-icon-store-icon-png-orange.png" type="image/x-icon">
+  
+  <!-- External CSS and Tailwind CDN -->
   <link rel="stylesheet" href="style.css">
-   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex flex-col min-h-screen">
 
-  <!-- Navbar -->
+  <!-- ====================== NAVIGATION BAR ====================== -->
   <header class="bg-white shadow">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      
+      <!-- Logo SVG -->
       <a href="#" class="text-xl font-semibold">
+        <!-- Company Logo -->
         <svg width="98" height="13" viewBox="0 0 98 13" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H4.51437V10.7492C4.51437 11.7234 5.57097 11.8224 6.06719 11.8224H11.2459V12.6728H1.53684V0.84206H0V0Z" fill="black"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M37.9238 0H36.9096L32.365 7.44824L27.8206 0H23.4648V0.851456H24.9586L29.9906 9.10155V12.6728H35.0697V11.8213H34.0633C33.5444 11.8213 32.9154 11.5485 32.9154 10.8872L32.9233 8.24185L37.9238 0Z" fill="black"/>
@@ -21,11 +29,16 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M83.1701 7.25694L86.595 1.84106L90.0037 7.25694H83.1701ZM95.5579 10.5511L88.9184 0H84.587V0.850353H86.1009L78.676 12.6728H79.7451L82.6355 8.1073H90.5377L93.4124 12.6728H97.9547V11.8224C96.9669 11.8224 96.0521 11.3354 95.5579 10.5511Z" fill="black"/>
         </svg>
       </a>
+      
+      <!-- Mobile Menu Toggle Button -->
       <button id="menu-toggle" class="sm:hidden p-2">
+        <!-- Hamburger Icon -->
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
+      
+      <!-- Desktop Menu Links -->
       <div id="menu" class="hidden sm:flex space-x-8 font-[var(--font-inter)]">
         <a href="#about" class="text-gray-700 hover:text-gray-900">About Us</a>
         <a href="javascript:void(0)" data-category="beauty" class="text-gray-700 hover:text-gray-900">Beauty</a>
@@ -35,6 +48,8 @@
         <a href="#contact" class="text-gray-700 hover:text-gray-900">Contact</a>
       </div>
     </nav>
+
+    <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu" class="sm:hidden px-4 pb-4 hidden space-y-2">
       <a href="#about" data-category="about" class="block py-2">About</a>
       <a href="javascript:void(0)" data-category="beauty" class="block py-2">Beauty</a>
@@ -45,48 +60,55 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ====================== HERO SECTION ====================== -->
   <header class="bg-[url('./img/about-bg.jpg')] bg-cover bg-center max-w-[100%] h-[100vh]">
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
       <h1 class="text-black-600 text-3xl sm:text-5xl font-normal mb-4 text-gray-950 font-[var(--font-garamond,Garandond,serif)]">
         Luxury without labels.
       </h1>
-      <p class="text-[var(--p-orange)] text-shadow-lg/12 tracking-[2px] sm:text-base max-w-md">
+      <p class="text-[var(--orange)] font-medium text-shadow-lg/12 tracking-[2px] sm:text-base max-w-md">
         The perfect balance of science, nature and technology. 
       </p>
       <div class="flex gap-4 mt-6">
+        <!-- CTA Buttons -->
         <a href="#about" class="border-none text-black-800 px-6 py-4 text-sm tracking-widest bg-white text-[14px] font-medium cursor-pointer shadow-lg hover:shadow-sm">About Us</a>
         <a href="#contact" class="border-none text-black-800 py-4 text-sm tracking-widest bg-white px-6 text-[14px] font-medium cursor-pointer shadow-lg hover:shadow-sm">Contact</a>
       </div>
     </div>
   </header>
 
-  <!-- CATEGORY FILTER -->
+  <!-- ====================== MAIN CONTENT ====================== -->
   <main class="container mx-auto px-4 py-8 space-y-4">
+
+    <!-- About Section -->
     <section id="about" class="py-16 bg-white mb-4 max-w-[100%] min-h-[50vh]">
-        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-          <div class="w-full lg:w-1/2">
-            <div class="relative rounded-xl overflow-hidden shadow-lg">
-              <img src="https://relax.com.ua/wp-content/media/kiew/2014/11/%D1%88%D0%BE%D0%BF%D0%B8%D0%BD%D0%B3.jpg" alt="Lyma Story" class="w-full h-auto object-cover">
-              <div class="absolute inset-0 bg-gradient-to-br from-[#a5ca28]/30 to-[#ed6d46]/30"></div>
-            </div>
-          </div>
-          <div class="w-full lg:w-1/2">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">About Lyma</h2>
-            <p class="text-gray-700 mb-6">
-              Welcome to Lyma! Our mission is to bring you high-quality, thoughtfully designed products that enhance your everyday life. We blend passion and purpose, crafting each item with care and intention.
-            </p>
-            <p class="text-gray-700 mb-6">
-              At Lyma, our commitment is to creativity, community, and sustainability. We believe in transparent sourcing, ethical production, and building long-lasting relationships with our customers.
-            </p>
-            <a href="#contact" class="inline-block bg-[#ed6d46] text-white px-6 py-3 rounded-lg hover:bg-[#c4543a] transition duration-300">
-              Contact Us
-            </a>
+      <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+        
+        <!-- About Image -->
+        <div class="w-full lg:w-1/2">
+          <div class="relative rounded-xl overflow-hidden shadow-lg">
+            <img src="img/shopping.jpg" alt="Lyma Story" class="w-full h-auto object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#a5ca28]/30 to-[#ed6d46]/30"></div>
           </div>
         </div>
+
+        <!-- About Text -->
+        <div class="w-full lg:w-1/2">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">About Lyma</h2>
+          <p class="text-gray-700 mb-6">
+            Welcome to Lyma! Our mission is to bring you high-quality...
+          </p>
+          <p class="text-gray-700 mb-6">
+            At Lyma, our commitment is to creativity...
+          </p>
+          <a href="#contact" class="inline-block bg-[#ed6d46] text-white px-6 py-3 rounded-lg hover:bg-[#c4543a] transition duration-300">
+            Contact Us
+          </a>
+        </div>
+      </div>
     </section>
 
-
+    <!-- Category Dropdown Filter -->
     <select id="category-filter" class="border p-2 rounded w-full sm:w-64 mt-[50px]">
       <option value="">All Categories</option>
       <option value="beauty">Beauty</option>
@@ -95,15 +117,20 @@
       <option value="groceries">Groceries</option>
     </select>
 
-    <!-- PRODUCT SECTIONS -->
+    <!-- Product Display Area -->
     <div id="sections-container" class="space-y-10"></div>
   </main>
 
-  <!-- CART -->
+  <!-- ====================== CART SECTION ====================== -->
+  <!-- Floating Cart Button -->
   <button id="cart-toggle" class="fixed bottom-6 right-6 bg-[#a5c927] text-white p-4 rounded-full shadow-lg z-20">
     🛒 <span id="cart-count">0</span>
   </button>
+
+  <!-- Cart Overlay Background -->
   <div id="cart-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-10"></div>
+
+  <!-- Cart Panel Sidebar -->
   <aside id="cart-panel" class="hidden fixed inset-y-0 right-0 w-full sm:max-w-xs lg:w-96 bg-white shadow-xl z-20 flex flex-col">
     <div class="flex justify-between items-center p-4 border-b">
       <h2 class="text-lg">Your Cart</h2>
@@ -115,7 +142,7 @@
     </div>
   </aside>
 
-    <!-- FOOTER -->
+  <!-- ====================== FOOTER ====================== -->
   <footer id="contact" class="bg-[#e8e5dd] text-black-600 mt-12">
     <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       
@@ -132,7 +159,7 @@
         <p class="text-sm">123/1 Arno Babajanyan Street<br>Yerevan, Armenia 0008</p>
       </div>
 
-      <!-- Social Links -->
+      <!-- Social Media -->
       <div>
         <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
         <div class="flex space-x-4 mt-2">
@@ -142,7 +169,7 @@
         </div>
       </div>
 
-      <!-- Map -->
+      <!-- Embedded Map -->
       <div>
         <h3 class="text-lg font-semibold mb-2">Find Us</h3>
         <iframe 
@@ -152,163 +179,21 @@
       </div>
 
     </div>
+
+    <!-- Copyright -->
     <div class="text-center text-sm text-black-600 py-4 border-t border-gray-700">
       &copy; 2025 Lyma. All rights reserved.
     </div>
   </footer>
 
+  <!-- ====================== SCRIPT SECTION ====================== -->
+  <!-- Main JS File -->
+  <script src="main.js"></script>
 
-  <!-- SCRIPT -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const ID = id => document.getElementById(id);
-
-      document.getElementById('menu-toggle').addEventListener('click', () =>
-        document.getElementById('mobile-menu').classList.toggle('hidden')
-      );
-
-      const sel = ID('category-filter');
-      const sectionsContainer = ID('sections-container');
-
-      let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
-
-      const saveCart = () => sessionStorage.setItem('cart', JSON.stringify(cart));
-
-      const updateCart = () => {
-        const cont = ID('cart-container');
-        cont.innerHTML = '';
-        let total = 0;
-        cart.forEach(i => {
-          total += i.price * i.quantity;
-          const div = document.createElement('div');
-          div.className = 'flex justify-between items-center';
-          div.innerHTML = `
-            <span class="text-sm">${i.title} × ${i.quantity}</span>
-            <div class="flex items-center space-x-1">
-              <button data-id="${i.id}" class="decrease bg-gray-200 rounded px-1">‑</button>
-              <button data-id="${i.id}" class="increase bg-gray-200 rounded px-1">+</button>
-              <button data-id="${i.id}" class="remove bg-red-200 rounded px-1">✕</button>
-            </div>`;
-          cont.appendChild(div);
-        });
-        ID('cart-count').textContent = cart.reduce((sum, i) => sum + i.quantity, 0);
-        ID('cart-total').textContent = total.toFixed(2);
-        saveCart();
-      };
-
-      const addToCart = prod => {
-        const p = cart.find(i => i.id === prod.id);
-        p ? p.quantity++ : cart.push({ ...prod, quantity: 1 });
-        updateCart();
-        toggleCart(true);
-      };
-
-      const toggleCart = v => {
-        ID('cart-panel').classList.toggle('hidden', !v);
-        ID('cart-overlay').classList.toggle('hidden', !v);
-      };
-
-      ID('cart-toggle').onclick = () => toggleCart(true);
-      ID('cart-close').onclick = () => toggleCart(false);
-      ID('cart-overlay').onclick = () => toggleCart(false);
-
-      ID('cart-container').onclick = e => {
-        const id = +e.target.dataset.id;
-        let item = cart.find(i => i.id === id);
-        if (!item) return;
-        if (e.target.matches('.increase')) item.quantity++;
-        else if (e.target.matches('.decrease')) {
-          if (--item.quantity === 0) cart = cart.filter(i => i.id !== id);
-        } else if (e.target.matches('.remove')) {
-          cart = cart.filter(i => i.id !== id);
-        }
-        updateCart();
-      };
-
-      function loadAndRender(category) {
-        const url = category ?
-          `https://dummyjson.com/products/category/${category}` :
-          'https://dummyjson.com/products';
-
-        fetch(url)
-          .then(res => res.json())
-          .then(data => {
-            const prods = category ? data.products : data.products;
-            const grouped = category ? { [category]: prods } :
-              prods.reduce((acc, p) => {
-                (acc[p.category] ||= []).push(p);
-                return acc;
-              }, {});
-
-            sectionsContainer.innerHTML = '';
-            for (const [cat, products] of Object.entries(grouped)) {
-              const section = document.createElement('div');
-              section.id = `section-${cat}`; // Assign section ID
-              section.innerHTML = `
-                <h2 class="text-2xl font-semibold mb-4">${cat[0].toUpperCase() + cat.slice(1)}</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"></div>`;
-              const grid = section.querySelector('div');
-              products.forEach(p => {
-                const card = document.createElement('div');
-                card.className = 'bg-white shadow rounded flex flex-col overflow-hidden';
-                card.innerHTML = `
-                  <img src="${p.thumbnail}" alt="${p.title}" class="w-full h-40 object-cover">
-                  <div class="p-4 flex flex-col flex-1">
-                    <h3 class="font-semibold mb-2">${p.title}</h3>
-                    <p class="text-lg font-bold mb-4">$${p.price}</p>
-                    <button data-id="${p.id}" data-title="${p.title}" data-price="${p.price}" class="buy-btn mt-auto bg-[#a5c927] text-white px-3 py-1 rounded">Buy</button>
-                  </div>`;
-                grid.appendChild(card);
-              });
-              sectionsContainer.appendChild(section);
-            }
-
-            // Attach Buy button events
-            sectionsContainer.querySelectorAll('.buy-btn').forEach(btn => {
-              btn.addEventListener('click', e => {
-                const el = e.currentTarget;
-                const prod = {
-                  id: +el.dataset.id,
-                  title: el.dataset.title,
-                  price: +el.dataset.price,
-                };
-                addToCart(prod);
-              });
-            });
-          });
-      }
-
-      // Attach navbar category filters
-      document.querySelectorAll('[data-category]').forEach(link => {
-        link.addEventListener('click', e => {
-          const category = e.target.dataset.category;
-          sel.value = category;
-          sel.dispatchEvent(new Event('change'));
-
-          // Wait for products to render, then scroll
-          setTimeout(() => {
-            const section = document.getElementById(`section-${category}`);
-            if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 500); // Delay to allow rendering
-
-          ID('mobile-menu').classList.add('hidden');
-        });
-      });
-
-      sel.onchange = e => loadAndRender(e.target.value);
-
-      updateCart();
-      sel.dispatchEvent(new Event('change'));
-    });
-  </script>
+  <!-- Back to Top Button Script -->
   <script> configObj = {"buttonD":"M8 17.333h5.333v4C13.333 22.806 14.527 24 16 24c1.473 0 2.667-1.194 2.667-2.667v-4H24L16 8l-8 9.333z","buttonT":"translate(-1088 -172) translate(832 140) translate(32 32) translate(224)","shadowSize":"none","roundnessSize":"999px","buttonDToBottom":"100px","buttonDToRight":"26px","selectedBackgroundColor":"#a5ca28","selectedIconColor":"#ed6d46","buttonWidth":"56px","buttonHeight":"56px","svgWidth":"48px","svgHeight":"48px"};function createButton(obj, pageSimulator) {    const body = document.querySelector("body");    backToTopButton = document.createElement("span");    backToTopButton.classList.add("softr-back-to-top-button");    backToTopButton.id = "softr-back-to-top-button";    pageSimulator      ? pageSimulator.appendChild(backToTopButton)      : body.appendChild(backToTopButton);    backToTopButton.style.width = obj.buttonWidth;    backToTopButton.style.height = obj.buttonHeight;    backToTopButton.style.marginRight = obj.buttonDToRight;    backToTopButton.style.marginBottom = obj.buttonDToBottom;    backToTopButton.style.borderRadius = obj.roundnessSize;    backToTopButton.style.boxShadow = obj.shadowSize;    backToTopButton.style.color = obj.selectedBackgroundColor;    backToTopButton.style.backgroundColor = obj.selectedBackgroundColor;    pageSimulator ? backToTopButton.style.position = "absolute" : backToTopButton.style.position = "fixed";    backToTopButton.style.outline = "none";    backToTopButton.style.bottom = "0px";    backToTopButton.style.right = "0px";    backToTopButton.style.cursor = "pointer";    backToTopButton.style.textAlign = "center";    backToTopButton.style.border = "solid 2px currentColor";    backToTopButton.innerHTML =      '<svg class="back-to-top-button-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" > <g fill="none" fill-rule="evenodd"> <path d="M0 0H32V32H0z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> <path class="back-to-top-button-img" fill-rule="nonzero" d="M11.384 13.333h9.232c.638 0 .958.68.505 1.079l-4.613 4.07c-.28.246-.736.246-1.016 0l-4.613-4.07c-.453-.399-.133-1.079.505-1.079z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> </g> </svg>';    backToTopButtonSvg = document.querySelector(".back-to-top-button-svg");    backToTopButtonSvg.style.verticalAlign = "middle";    backToTopButtonSvg.style.margin = "auto";    backToTopButtonSvg.style.justifyContent = "center";    backToTopButtonSvg.style.width = obj.svgWidth;    backToTopButtonSvg.style.height = obj.svgHeight;    backToTopButton.appendChild(backToTopButtonSvg);    backToTopButtonImg = document.querySelector(".back-to-top-button-img");    backToTopButtonImg.style.fill = obj.selectedIconColor;    backToTopButtonSvg.appendChild(backToTopButtonImg);    backToTopButtonImg.setAttribute("d", obj.buttonD);    backToTopButtonImg.setAttribute("transform", obj.buttonT);        if(!pageSimulator) {      backToTopButton.style.display = "none";      window.onscroll = function() {        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {          backToTopButton.style.display = "block";        } else {          backToTopButton.style.display = "none";        }      };        backToTopButton.onclick = function() {        document.body.scrollTop = 0;        document.documentElement.scrollTop = 0;      };    }  };document.addEventListener("DOMContentLoaded", function() { createButton(configObj, null); });</script></body>
 </html>
 
-<!-- 
-   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.0356800055206!2d44.438384987062456!3d40.16375929794835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abe77b6a79f3f%3A0x8263a003b8ffe806!2s123%20Arno%20Babajanyan%20St%2C%20Yerevan%200051!5e0!3m2!1sru!2sam!4v1749814177282!5m2!1sru!2sam" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
--->
 
 
 

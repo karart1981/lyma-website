@@ -4,10 +4,10 @@
   --green: #a5c927;
   --font-inter: 'Inter', sans-serif;
   --font-garamond: 'Garamond', serif;
-  --p-orange: #ed6d46; font-weight: 500;
+  --orange: #ed6d46;
 }
 
-*{
+* {
   scroll-behavior: smooth;
 }
 
