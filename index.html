@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lyma</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex flex-col min-h-screen">
 
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <header class="bg-white shadow">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
       <a href="#" class="text-xl font-semibold">
-        <svg width="98" height="13" viewBox="0 0 98 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="98" height="13" viewBox="0 0 98 13" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H4.51437V10.7492C4.51437 11.7234 5.57097 11.8224 6.06719 11.8224H11.2459V12.6728H1.53684V0.84206H0V0Z" fill="black"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M37.9238 0H36.9096L32.365 7.44824L27.8206 0H23.4648V0.851456H24.9586L29.9906 9.10155V12.6728H35.0697V11.8213H34.0633C33.5444 11.8213 32.9154 11.5485 32.9154 10.8872L32.9233 8.24185L37.9238 0Z" fill="black"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M49.6901 0.00828764V0.858085H51.2572V12.6728H52.1733V3.16822L58.0797 12.6563L64.2274 2.82168V12.6646H68.9688V11.8148C68.6147 11.8148 67.2169 11.8148 67.2169 10.833V0L64.9344 0.00828764L59.3011 9.04261L53.62 0H49.6901V0.00828764Z" fill="black"/>
@@ -34,7 +34,7 @@
       </div>
     </nav>
     <div id="mobile-menu" class="sm:hidden px-4 pb-4 hidden space-y-2">
-      <a href="#about" class="block py-2">About</a>
+      <a href="#about" data-category="about" class="block py-2">About</a>
       <a href="javascript:void(0)" data-category="beauty" class="block py-2">Beauty</a>
       <a href="javascript:void(0)" data-category="fragrances" class="block py-2">Fragrances</a>
       <a href="javascript:void(0)" data-category="furniture" class="block py-2">Furniture</a>
@@ -43,24 +43,48 @@
   </header>
 
   <!-- HERO -->
-  <header class="bg-[url('./img/about-bg.jpg')] bg-cover bg-center max-w-[100%] h-[600px]">
+  <header class="bg-[url('./img/about-bg.jpg')] bg-cover bg-center max-w-[100%] h-[100vh]">
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
       <h1 class="text-black-600 text-3xl sm:text-5xl font-normal mb-4 text-gray-950 font-[var(--font-garamond,Garandond,serif)]">
         Luxury without labels.
       </h1>
-      <p class="text-black-400 text-shadow-lg/10 text-sm sm:text-base max-w-md">
+      <p class="text-[var(--p-orange)] text-shadow-lg/12 tracking-[2px] sm:text-base max-w-md">
         The perfect balance of science, nature and technology. 
       </p>
       <div class="flex gap-4 mt-6">
-        <button class="border-none text-black-800 px-6 py-4 text-xs tracking-widest bg-white text-[14px] font-medium cursor-pointer">DEAL OF THE DAY</button>
-        <button class="border-none text-black-800 py-4 text-xs tracking-widest bg-white px-6 text-[14px] font-medium cursor-pointer">JOURNAL</button>
+        <a href="#about" class="border-none text-black-800 px-6 py-4 text-sm tracking-widest bg-white text-[14px] font-medium cursor-pointer shadow-lg hover:shadow-sm">About Us</a>
+        <a href="#contact" class="border-none text-black-800 py-4 text-sm tracking-widest bg-white px-6 text-[14px] font-medium cursor-pointer shadow-lg hover:shadow-sm">Contact</a>
       </div>
     </div>
   </header>
 
   <!-- CATEGORY FILTER -->
   <main class="container mx-auto px-4 py-8 space-y-4">
-    <select id="category-filter" class="border p-2 rounded w-full sm:w-64">
+    <section id="about" class="py-16 bg-white mb-4 max-w-[100%] min-h-[100vh]">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+          <div class="w-full lg:w-1/2">
+            <div class="relative rounded-xl overflow-hidden shadow-lg">
+              <img src="https://relax.com.ua/wp-content/media/kiew/2014/11/%D1%88%D0%BE%D0%BF%D0%B8%D0%BD%D0%B3.jpg" alt="Lyma Story" class="w-full h-auto object-cover">
+              <div class="absolute inset-0 bg-gradient-to-br from-[#a5ca28]/30 to-[#ed6d46]/30"></div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">About Lyma</h2>
+            <p class="text-gray-700 mb-6">
+              Welcome to Lyma! Our mission is to bring you high-quality, thoughtfully designed products that enhance your everyday life. We blend passion and purpose, crafting each item with care and intention.
+            </p>
+            <p class="text-gray-700 mb-6">
+              At Lyma, our commitment is to creativity, community, and sustainability. We believe in transparent sourcing, ethical production, and building long-lasting relationships with our customers.
+            </p>
+            <a href="#" class="inline-block bg-[#ed6d46] text-white px-6 py-3 rounded-lg hover:bg-[#c4543a] transition duration-300">
+              Contact Us
+            </a>
+          </div>
+        </div>
+    </section>
+
+
+    <select id="category-filter" class="border p-2 rounded w-full sm:w-64 mt-[50px]">
       <option value="">All Categories</option>
       <option value="beauty">Beauty</option>
       <option value="fragrances">Fragrances</option>
@@ -233,8 +257,7 @@
       sel.dispatchEvent(new Event('change'));
     });
   </script>
-
-</body>
+  <script> configObj = {"buttonD":"M8 17.333h5.333v4C13.333 22.806 14.527 24 16 24c1.473 0 2.667-1.194 2.667-2.667v-4H24L16 8l-8 9.333z","buttonT":"translate(-1088 -172) translate(832 140) translate(32 32) translate(224)","shadowSize":"none","roundnessSize":"999px","buttonDToBottom":"100px","buttonDToRight":"26px","selectedBackgroundColor":"#a5ca28","selectedIconColor":"#ed6d46","buttonWidth":"56px","buttonHeight":"56px","svgWidth":"48px","svgHeight":"48px"};function createButton(obj, pageSimulator) {    const body = document.querySelector("body");    backToTopButton = document.createElement("span");    backToTopButton.classList.add("softr-back-to-top-button");    backToTopButton.id = "softr-back-to-top-button";    pageSimulator      ? pageSimulator.appendChild(backToTopButton)      : body.appendChild(backToTopButton);    backToTopButton.style.width = obj.buttonWidth;    backToTopButton.style.height = obj.buttonHeight;    backToTopButton.style.marginRight = obj.buttonDToRight;    backToTopButton.style.marginBottom = obj.buttonDToBottom;    backToTopButton.style.borderRadius = obj.roundnessSize;    backToTopButton.style.boxShadow = obj.shadowSize;    backToTopButton.style.color = obj.selectedBackgroundColor;    backToTopButton.style.backgroundColor = obj.selectedBackgroundColor;    pageSimulator ? backToTopButton.style.position = "absolute" : backToTopButton.style.position = "fixed";    backToTopButton.style.outline = "none";    backToTopButton.style.bottom = "0px";    backToTopButton.style.right = "0px";    backToTopButton.style.cursor = "pointer";    backToTopButton.style.textAlign = "center";    backToTopButton.style.border = "solid 2px currentColor";    backToTopButton.innerHTML =      '<svg class="back-to-top-button-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" > <g fill="none" fill-rule="evenodd"> <path d="M0 0H32V32H0z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> <path class="back-to-top-button-img" fill-rule="nonzero" d="M11.384 13.333h9.232c.638 0 .958.68.505 1.079l-4.613 4.07c-.28.246-.736.246-1.016 0l-4.613-4.07c-.453-.399-.133-1.079.505-1.079z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> </g> </svg>';    backToTopButtonSvg = document.querySelector(".back-to-top-button-svg");    backToTopButtonSvg.style.verticalAlign = "middle";    backToTopButtonSvg.style.margin = "auto";    backToTopButtonSvg.style.justifyContent = "center";    backToTopButtonSvg.style.width = obj.svgWidth;    backToTopButtonSvg.style.height = obj.svgHeight;    backToTopButton.appendChild(backToTopButtonSvg);    backToTopButtonImg = document.querySelector(".back-to-top-button-img");    backToTopButtonImg.style.fill = obj.selectedIconColor;    backToTopButtonSvg.appendChild(backToTopButtonImg);    backToTopButtonImg.setAttribute("d", obj.buttonD);    backToTopButtonImg.setAttribute("transform", obj.buttonT);        if(!pageSimulator) {      backToTopButton.style.display = "none";      window.onscroll = function() {        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {          backToTopButton.style.display = "block";        } else {          backToTopButton.style.display = "none";        }      };        backToTopButton.onclick = function() {        document.body.scrollTop = 0;        document.documentElement.scrollTop = 0;      };    }  };document.addEventListener("DOMContentLoaded", function() { createButton(configObj, null); });</script></body>
 </html>
 
 
