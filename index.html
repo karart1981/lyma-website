@@ -31,6 +31,7 @@
         <a href="javascript:void(0)" data-category="fragrances" class="text-gray-700 hover:text-gray-900">Fragrances</a>
         <a href="javascript:void(0)" data-category="furniture" class="text-gray-700 hover:text-gray-900">Furniture</a>
         <a href="javascript:void(0)" data-category="groceries" class="text-gray-700 hover:text-gray-900">Groceries</a>
+        <a href="#contact" class="text-gray-700 hover:text-gray-900">Contact</a>
       </div>
     </nav>
     <div id="mobile-menu" class="sm:hidden px-4 pb-4 hidden space-y-2">
@@ -39,6 +40,7 @@
       <a href="javascript:void(0)" data-category="fragrances" class="block py-2">Fragrances</a>
       <a href="javascript:void(0)" data-category="furniture" class="block py-2">Furniture</a>
       <a href="javascript:void(0)" data-category="groceries" class="block py-2">Groceries</a>
+      <a href="#contact" data-category="contact" class="block py-2">Contact</a>
     </div>
   </header>
 
@@ -60,7 +62,7 @@
 
   <!-- CATEGORY FILTER -->
   <main class="container mx-auto px-4 py-8 space-y-4">
-    <section id="about" class="py-16 bg-white mb-4 max-w-[100%] min-h-[100vh]">
+    <section id="about" class="py-16 bg-white mb-4 max-w-[100%] min-h-[50vh]">
         <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
           <div class="w-full lg:w-1/2">
             <div class="relative rounded-xl overflow-hidden shadow-lg">
@@ -111,6 +113,49 @@
       <p class="font-semibold">Total: $<span id="cart-total">0</span></p>
     </div>
   </aside>
+
+    <!-- FOOTER -->
+  <footer id="contact" class="bg-[#e8e5dd] text-black-600 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Contact</h3>
+        <p class="text-sm">Phone: <a href="tel:+37494123456" class="hover:underline">+374 (94) 123-456</a></p>
+        <p class="text-sm mt-1">Email: <a href="mailto:info@lyma.com" class="hover:underline">info@lyma.com</a></p>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Address</h3>
+        <p class="text-sm">123/1 Arno Babajanyan Street<br>Yerevan, Armenia 0008</p>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
+        <div class="flex space-x-4 mt-2">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-[#a5ca28]">Facebook</a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-[#a5ca28]">Instagram</a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="hover:text-[#a5ca28]">Twitter</a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Find Us</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.0356800055206!2d44.438384987062456!3d40.16375929794835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abe77b6a79f3f%3A0x8263a003b8ffe806!2s123%20Arno%20Babajanyan%20St%2C%20Yerevan%200051!5e0!3m2!1sru!2sam!4v1749814177282!5m2!1sru!2sam"
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" class="rounded">
+        </iframe>
+      </div>
+
+    </div>
+    <div class="text-center text-sm text-black-600 py-4 border-t border-gray-700">
+      &copy; 2025 Lyma. All rights reserved.
+    </div>
+  </footer>
+
 
   <!-- SCRIPT -->
   <script>
@@ -259,6 +304,10 @@
   </script>
   <script> configObj = {"buttonD":"M8 17.333h5.333v4C13.333 22.806 14.527 24 16 24c1.473 0 2.667-1.194 2.667-2.667v-4H24L16 8l-8 9.333z","buttonT":"translate(-1088 -172) translate(832 140) translate(32 32) translate(224)","shadowSize":"none","roundnessSize":"999px","buttonDToBottom":"100px","buttonDToRight":"26px","selectedBackgroundColor":"#a5ca28","selectedIconColor":"#ed6d46","buttonWidth":"56px","buttonHeight":"56px","svgWidth":"48px","svgHeight":"48px"};function createButton(obj, pageSimulator) {    const body = document.querySelector("body");    backToTopButton = document.createElement("span");    backToTopButton.classList.add("softr-back-to-top-button");    backToTopButton.id = "softr-back-to-top-button";    pageSimulator      ? pageSimulator.appendChild(backToTopButton)      : body.appendChild(backToTopButton);    backToTopButton.style.width = obj.buttonWidth;    backToTopButton.style.height = obj.buttonHeight;    backToTopButton.style.marginRight = obj.buttonDToRight;    backToTopButton.style.marginBottom = obj.buttonDToBottom;    backToTopButton.style.borderRadius = obj.roundnessSize;    backToTopButton.style.boxShadow = obj.shadowSize;    backToTopButton.style.color = obj.selectedBackgroundColor;    backToTopButton.style.backgroundColor = obj.selectedBackgroundColor;    pageSimulator ? backToTopButton.style.position = "absolute" : backToTopButton.style.position = "fixed";    backToTopButton.style.outline = "none";    backToTopButton.style.bottom = "0px";    backToTopButton.style.right = "0px";    backToTopButton.style.cursor = "pointer";    backToTopButton.style.textAlign = "center";    backToTopButton.style.border = "solid 2px currentColor";    backToTopButton.innerHTML =      '<svg class="back-to-top-button-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" > <g fill="none" fill-rule="evenodd"> <path d="M0 0H32V32H0z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> <path class="back-to-top-button-img" fill-rule="nonzero" d="M11.384 13.333h9.232c.638 0 .958.68.505 1.079l-4.613 4.07c-.28.246-.736.246-1.016 0l-4.613-4.07c-.453-.399-.133-1.079.505-1.079z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> </g> </svg>';    backToTopButtonSvg = document.querySelector(".back-to-top-button-svg");    backToTopButtonSvg.style.verticalAlign = "middle";    backToTopButtonSvg.style.margin = "auto";    backToTopButtonSvg.style.justifyContent = "center";    backToTopButtonSvg.style.width = obj.svgWidth;    backToTopButtonSvg.style.height = obj.svgHeight;    backToTopButton.appendChild(backToTopButtonSvg);    backToTopButtonImg = document.querySelector(".back-to-top-button-img");    backToTopButtonImg.style.fill = obj.selectedIconColor;    backToTopButtonSvg.appendChild(backToTopButtonImg);    backToTopButtonImg.setAttribute("d", obj.buttonD);    backToTopButtonImg.setAttribute("transform", obj.buttonT);        if(!pageSimulator) {      backToTopButton.style.display = "none";      window.onscroll = function() {        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {          backToTopButton.style.display = "block";        } else {          backToTopButton.style.display = "none";        }      };        backToTopButton.onclick = function() {        document.body.scrollTop = 0;        document.documentElement.scrollTop = 0;      };    }  };document.addEventListener("DOMContentLoaded", function() { createButton(configObj, null); });</script></body>
 </html>
+
+<!-- 
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3049.0356800055206!2d44.438384987062456!3d40.16375929794835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abe77b6a79f3f%3A0x8263a003b8ffe806!2s123%20Arno%20Babajanyan%20St%2C%20Yerevan%200051!5e0!3m2!1sru!2sam!4v1749814177282!5m2!1sru!2sam" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+-->
 
 
 
