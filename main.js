@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const p = cart.find(i => i.id === prod.id);
     p ? p.quantity++ : cart.push({ ...prod, quantity: 1 });
     updateCart();
-    toggleCart(true); // Show the cart
+    // toggleCart(true); // Disabled to prevent auto-opening the cart
   };
 
   // Show or hide the cart panel and overlay
