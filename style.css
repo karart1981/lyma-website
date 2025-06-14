@@ -15,3 +15,38 @@
 
 
 
+
+
+
+@media (max-width: 640px) {
+  .increase,
+  .decrease {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 1rem !important;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+
+@media (max-width: 640px) {
+  #cart-close {
+    font-size: 1.5rem !important;
+    padding: 0.5rem !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .remove {
+    font-size: 1.25rem !important;
+    padding: 0.5rem !important;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+
+
